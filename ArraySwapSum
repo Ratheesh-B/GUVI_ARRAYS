@@ -1,0 +1,18 @@
+from functools import reduce
+n=input()
+a=[int(x) for x in input().split()]
+b=list(map(int,input().split()))
+
+def sumOfArray(arr):
+    return reduce(lambda a,b:a+b,arr)
+def Func(sum_a,sum_b,a,b):
+    for i in range(0,len(a)):
+        if((sum_a-a[i]+b[i])==(sum_b-b[i]+a[i])):
+            return True
+    return False
+sum_a=sumOfArray(a)
+sum_b=sumOfArray(b)
+if (Func(sum_a,sum_b,a,b)):
+    print("yes")
+else:
+    print("no")
